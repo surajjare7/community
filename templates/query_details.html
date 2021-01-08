@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Query Detail</title>
+{%endblock%}
+
+
+{% block content %}
+
+<div class="container" style="margin-bottom:40px; margin-top:40px;">
+<div class="card">
+    {% for i in query %}
+  <h3 class="card-header">{{i.question}}</h3>
+    {% endfor %}
+  <div class="card-body">
+    <h5 class="card-title">Discussed answers</h5>
+      {% for i in answer %}
+      <p class="card-text"><i>{{i.answer}}</i></p>
+      {% endfor %}
+      <form action="" method="POST">
+        {% csrf_token %}
+            <div class="mb-0">
+                {{solform}}
+            </div>
+            <div class="p-3 text-center">
+                <button class="btn btn-block bg-success rounded-pill" type="submit">Submit</button>
+            </div>
+      </form>
+  </div>
+</div>
+</div>
+<!--{% for i in query %}-->
+<!--<h1>Title :{{i.question}}</h1>-->
+<!--{% endfor %}-->
+
+<!--{% for i in answer %}-->
+<!--<h1>{{i.answer}}</h1>-->
+<!--{% endfor %}-->
+
+<!--<form action="" method="POST">-->
+<!--{% csrf_token %}-->
+<!--    <div class="mb-0">-->
+<!--        {{solform}}-->
+<!--    </div>-->
+<!--    <div class="p-3 text-center">-->
+<!--        <button class="btn btn-block bg-success rounded-pill" type="submit">Submit</button>-->
+<!--    </div>-->
+<!--</form>-->
+
+{% endblock %}

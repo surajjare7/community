@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>about</title>
+
+<style>
+#seccb {
+	background-color: white;
+    height: 400px;
+    /* align-self: center; */
+}
+
+.right-picture img {
+	/* border: 1px solid white; */
+	height: 300px;
+	width: 400px;
+	display: block;
+	margin-left: -200px;
+}
+
+#seccb h3 {
+	color: black;
+}
+
+#seccb p {
+	color: black;
+	height: 170px;
+	width: 600px;
+	padding: 0;
+	margin: 0;
+	line-height: 20px;
+	vertical-align: top;
+}
+
+.main-topic {
+	width: 1541px;
+	margin: 5px auto;
+	clear: both;
+    display: flex;
+}
+
+.left-text{
+	vertical-align:middle;
+	padding-left: 200px;
+	font-size: large;
+}
+
+.right-text{
+	vertical-align:middle;
+	padding-left: 200px;
+	font-size: large;
+}
+
+.left-text .btn{
+	margin-top: -200px;
+}
+
+.left-picture > img{
+	display: block;
+	padding-left: 20px;
+}
+
+.clear{
+	clear: both;
+}
+</style>
+
+{%endblock%}
+
+{% block content %}
+<br>
+<section class="container" id="seccb">
+    <div class="main-topic">
+        <div class="left-text" style="text-align: justify;">
+            <br><br><br>
+            <h2><b> Watch Pro Courses</b></h2>
+            <p>
+                Learn from the pros with our original courses.<br> Made exclusively by gaming legends.
+			</p>
+			<!-- <a href="{% url 'services' %}"></a> -->
+			<a href="{% url 'services' %}" class="btn btn-danger btn-rounded btn-lg">Watch Now</a>
+        </div>
+        <div class="right-picture">
+            <img src="{% static 'img/about.png' %}">
+        </div>
+        <div class="clear"></div>
+
+	</section>
+	<section class="container" id="seccbb">
+	<div class="main-topic">
+
+		<div class="left-picture">
+			<img src="{% static 'img/coach.png' %}">
+		</div>
+
+		<div class="right-text" style="text-align: justify;">
+			<br><br><br>
+			<h2><b> Get Coaching</b></h2>
+			<p>
+				Our elite coaches are in the top 1% and can <br> help you take your play to the next level.
+			</p>
+			<!-- <a href="{% url 'services' %}"></a> -->
+			<a href="{% url 'services' %}" class="btn btn-danger btn-rounded btn-lg">Start Training</a>
+		</div>
+		
+		<div class="clear"></div>
+	<div>
+</section>
+
+
+
+{% endblock %}

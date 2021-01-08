@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Add Your Service</title>
+{%endblock%}
+
+{% block content %}
+    <div class="container">
+        <span>
+            <br><br>
+        </span>
+        <h2>New post</h2>
+        <form method="POST" enctype="multipart/form-data" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{form.media}}
+            <button type="submit" class="save btn btn-primary">Save</button>
+        </form>
+    </div>
+    
+{% endblock %}

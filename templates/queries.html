@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Queries</title>
+{%endblock%}
+
+
+{% block content %}
+<style>
+    #create-btn {
+    /* width: auto; */
+    padding: 7px 9px;
+    margin-left: 46%;
+    }
+</style>
+
+<form action="{% url 'create_query' %}" style="margin-top:10px;" >
+    <h2 style="text-align:center;">Queries</h2>
+    <button type="submit" id="create-btn">Post Query</button>
+</form>
+
+
+<div class="container" style="margin-bottom:50px;">
+{% for q in query %}
+
+    <div class="card" style="margin-bottom:20px;">
+      <!-- <h5 class="card-header">{{q.questioncategory}}</h5> -->
+      <div class="card-body">
+        <h5 class="card-title">Asked Question</h5>
+        <p class="card-text">{{q.question}}</p>
+        <a href="{% url 'query_details' question=q.question %}" class="btn btn-primary">See Solutions</a>
+      </div>     
+    </div>
+
+{% endfor %}
+</div>
+{% endblock %}
+

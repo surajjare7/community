@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Add Query</title>
+{%endblock%}
+
+
+{% block content %}
+
+<form method='POST' class="mx-auto" style="border:1px solid #ccc; margin: 0px;">
+    <div class="container" style="margin-top:30px;">
+    {% csrf_token %}
+    <div>
+        <h2>What's in your mind?</h2>
+        <p>Feel free to ask. Were here to help.</p><hr id="hhhr">
+    <!-- <label for="questioncategory"><b>Question Category</b></label>
+    <select class="form-control" id="query-questioncategory" name="questioncategory" style="margin-top:10px;">
+      <option>General</option>
+      <option>Science</option>
+      <option>Programming</option>
+      <option>Data Science</option>
+      <option>Trading</option>
+    </select> -->
+  </div>
+  <div style="margin-top:4px;">
+    <label for="question"><b>Question </b></label>
+    <textarea class="form-control" id="query-question" name="question" rows="4" style="margin-top:10px; width: 600px;"></textarea>
+  </div>
+   <div style="margin-bottom:70px; margin-top:15px;">
+       <button type='submit' id="querybtn">Submit</button>
+   </div>
+</div>
+
+</form>
+
+
+{% endblock %}
